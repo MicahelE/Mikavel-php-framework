@@ -1,16 +1,26 @@
 <?php
-class Pages {
-public function __construct(){
-   
-}
-
-public function index()
-{
+  class Pages extends Controller {
+    public function __construct(){
+     
+    }
     
-}
+    public function index(){
+    
+      $data = [
+        'title' => 'SharePosts',
+        'description'=> 'Simple simple social media network built on the custom PHP framework'
+        
+      ];
+     
+      $this->view('pages/index', $data);
+    }
 
-public function about($id)
-{
-     echo $id;
-}
-}
+    public function about(){
+      $data = [
+        'title' => 'About Us',
+        'description'=> 'Apps to share posts with other users'
+      ];
+
+      $this->view('pages/about', $data);
+    }
+  }
